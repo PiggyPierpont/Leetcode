@@ -9,6 +9,16 @@
 
 > Your function should return length = 2, and A is now [1,2].
 
+# Remove Duplicates from Sorted Array II
+
+> Follow up for "Remove Duplicates":
+> What if duplicates are allowed at most twice?
+
+> For example,
+> Given sorted array A = [1,1,1,2,2,3],
+
+> Your function should return length = 5, and A is now [1,1,2,2,3].
+
 # Plus One
 
 > Given a non-negative number represented as an array of digits, plus one to the number.
