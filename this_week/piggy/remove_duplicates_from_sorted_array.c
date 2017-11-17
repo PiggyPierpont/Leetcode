@@ -3,7 +3,7 @@
 int removeDuplicate(int [], int);
 
 int main(void) {
-    int a[8] = {1, 3, 2, 3, 4, 3, 5, 6};
+    int a[8] = {1, 3, 3, 3, 4, 3, 5, 6};
     int length = removeDuplicate(a, 8);
     printf("length = %d\n", length);
     for (int i = 0; i < length; i++)
@@ -14,18 +14,18 @@ int main(void) {
 
 int removeDuplicate(int a[], int n) {
     int length = n;
-    int i, j, k = 1;
+    int i = 0, j = 1;
 
-    for (i = 1; i < n; i++) {
-        for (j = 0; j <= i; j++) {
-            if (a[i] == a[j])
-                break;
+    for (; j < n; j++) {
+        while (a[i] == a[j] && j < n) {
+            j++;
+            length--;
         }
 
-        if (i == j) {
-            a[k++] = a[i];
-        } else
-            length--;
+        if (j >= n)
+            break;
+
+        a[++i] = a[j];
     }
 
     return length;
