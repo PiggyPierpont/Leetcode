@@ -2,8 +2,7 @@
 #include<malloc.h>
 
 int mult10(int);
-int* plus_one(int [], int);
-int calDigit(int);
+int* plus_one(int [], int, int*);
 
 int main(void) {
     int a[2] = {9, 9};
@@ -13,7 +12,7 @@ int main(void) {
     return 0;
 }
 
-int* plus_one(int a[], int n) {
+int* plus_one(int a[], int n, int* resultSize) {
     int sum = 0;
 
     for (int i = n - 1, j = 0; i >= 0; i--, j++) 
@@ -21,10 +20,12 @@ int* plus_one(int a[], int n) {
 
     sum += 1;
 
-    int digit = calDigit(sum);
-    int* result = malloc(digit * sizeof(int));
+    *resultSize = 0;
+    for (int i = sum; i != 0; i /= 10, (*resultSize)++) ;
 
-    for (int i = digit - 1; i >= 0; i--) {
+    int* result = malloc(*resultSize * sizeof(int));
+
+    for (int i = *resultSize - 1; i >= 0; i--) {
         result[i] = sum % 10;
         sum /= 10;
     }
@@ -42,12 +43,4 @@ int mult10(int n) {
         sum *= 10;
 
     return sum;
-}
-
-int calDigit(int n) {
-    int i = 0;
-
-    for (int j = n; j != 0; j /= 10, i++) ;
-
-    return i;
 }
