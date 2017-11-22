@@ -1,43 +1,96 @@
-# Remove Duplicates from Sorted Array
+# Merge Sorted Array
 
-> Given a sorted array, remove the duplicates in place such that > each element appear only once and return the new length.
+> Given two sorted integer arrays A and B, merge B into A as one sorted array.
 
-> Do not allocate extra space for another array, you must do this in place with constant memory.
+> Note:
+> You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. The number of elements initialized in A and B are m and n respectively.
 
-> For example,
-> Given input array A = [1,1,2],
-
-> Your function should return length = 2, and A is now [1,2].
-
-# Remove Duplicates from Sorted Array II
-
-> Follow up for "Remove Duplicates":
-> What if duplicates are allowed at most twice?
-
-> For example,
-> Given sorted array A = [1,1,1,2,2,3],
-
-> Your function should return length = 5, and A is now [1,1,2,2,3].
-
-# Plus One
-
-> Given a non-negative number represented as an array of digits, plus one to the number.
-
-> The digits are stored such that the most significant digit is at the head of the list.
-
-# Pascal's Triangle
-
-> Given numRows, generate the first numRows of Pascal's triangle.
-
-> For example, given numRows = 5,
-> Return
+C:
 
 ```
+void merge(int* nums1, int m, int* nums2, int n) {
+    
+}
+```
+
+java:
+
+```
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+    }
+}
+```
+
+# 2Sum
+> Given an array of intergers, find two numbers such that they add up to a specific target number. The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2 Please note that your returned answers (both index1 and index2) are not zero-based.
+
+> You may assume that each input would have exactly one solution.
+
+> Input: numbers={2, 7, 11, 15}, target=9
+Output: index1=1, index2=2
+
+题目翻译：
+这道题目的意思是给定一个数组和一个值，让求出这个数组中两个值的和等于这个给定值的坐标。输出是有要求的，1， 坐标较小的放在前面，较大的放在后面。2， 这俩坐标不能为零。
+
+C:
+
+```
+/**
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* twoSum(int* numbers, int numbersSize, int target, int* returnSize) {
+    
+}
+```
+
+java:
+
+```
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        
+    }
+}
+```
+
+# 3Sum
+> Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+> Note:
+Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
+The solution set must not contain duplicate triplets.
+
+```
+For example, given array S = [-1, 0, 1, 2, -1, -4],
+
+A solution set is:
 [
-     [1],
-    [1,1],
-   [1,2,1],
-  [1,3,3,1],
- [1,4,6,4,1]
+  [-1, 0, 1],
+  [-1, -1, 2]
 ]
+```
+
+C:
+
+```
+/**
+ * Return an array of arrays of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int** threeSum(int* nums, int numsSize, int* returnSize) {
+    
+}
+```
+
+java:
+
+```
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        
+    }
+}
 ```
