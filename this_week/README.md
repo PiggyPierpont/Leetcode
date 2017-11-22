@@ -1,6 +1,6 @@
 # check
 
-|         |Remove Duplicates From Sorted Array|Remove Duplicates From Sorted Array 2|Plus One|Pascal's Triangle|
-|---------|:---------------------------------:|:-----------------------------------:|:------:|:---------------:|
-|piggy    |100%|100%|100%|0%|
-|linhaiqin|0%|0%|0%|0%|
+|        |Merge Sorted Array|2Sum|3Sum|
+|--------|:----------------:|:--:|:--:|
+|piggy   |0%|0%|0%|
+|pierpont|0%|0%|0%|
