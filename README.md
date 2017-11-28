@@ -4,7 +4,7 @@
 
 |        |3Sum Closest|4Sum|Find Minimum in Rotated Sorted Array|
 |--------|:----------:|:--:|:----------------------------------:|
-|piggy   |0%|0%|0%|
+|piggy   |100%|0%|0%|
 |pierpont|0%|0%|0%|
 
 ## 02
