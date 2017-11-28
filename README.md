@@ -1,10 +1,17 @@
 # check
 
-## this week
+## this_week
+
+|        |3Sum Closest|4Sum|Find Minimum in Rotated Sorted Array|
+|--------|:----------:|:--:|:----------------------------------:|
+|piggy   |0%|0%|0%|
+|pierpont|0%|0%|0%|
+
+## 02
 
 |        |Merge Sorted Array|2Sum|3Sum|
 |--------|:----------------:|:--:|:--:|
-|piggy   |100%|0%|0%|
+|piggy   |100%|100%|100%|
 |pierpont|0%|0%|0%|
 
 ## 01
