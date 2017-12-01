@@ -4,10 +4,6 @@
 
 |        |3Sum Closest|4Sum|Find Minimum in Rotated Sorted Array|
 |--------|:----------:|:--:|:----------------------------------:|
-<<<<<<< HEAD
-|piggy   |100%|100%|100%|
-|pierpont|100%|100%|100%|
-=======
 |piggy   |100%|100%|100%|
 |pierpont|100%|100%|100%|
 >>>>>>> master
