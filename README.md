@@ -5,7 +5,7 @@
 |        |Largest Rectangle in Histogram|Maximal Rectangle|Palindrome Number|
 |--------|:----------------------------:|:---------------:|:---------------:|
 |piggy   |100%|0%|0%|
-|pierpont|10%|0%|10%|
+|pierpont|100%|0%|100%|
 
 ## 03
 
