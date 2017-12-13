@@ -4,7 +4,7 @@
 
 |        |Search a 2D Matrix|Search for a Range|Search Insert Position|
 |--------|:----------------:|:----------------:|:--------------------:|
-|piggy   |100%|100%|0%|
+|piggy   |100%|100%|100%|
 |pierpont|100%|100%|100%|
 
 ## 04
