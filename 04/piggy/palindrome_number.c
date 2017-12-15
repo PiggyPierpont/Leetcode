@@ -17,6 +17,9 @@ int main(void) {
 }
 
 bool isPalindrome(int x) {
+    if (x < 0)
+        return false;
+
     int tmp = x;
     int i = 1;
     tmp /= 10;
@@ -33,7 +36,7 @@ bool isPalindrome(int x) {
         x /= 10;
     }
 
-    for (int j = 0, k = i - 1; j >= k; j++, k--) {
+    for (int j = 0, k = i - 1; j <= k; j++, k--) {
         printf("%d %d\n", a[j], a[k]);
         if (a[j] != a[k])
             return false;

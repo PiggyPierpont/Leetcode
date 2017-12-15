@@ -3,13 +3,9 @@
 int searchInsert(int *, int, int);
 
 int main(void) {
-    int a[4] = {1, 3, 5, 6};
-    int target;
+    int a[2] = {1, 3};
 
-    printf("please enter a target number: ");
-    scanf("%d", &target);
-
-    int position = searchInsert(a, 4, target);
+    int position = searchInsert(a, 2, 2);
 
     printf("insert position: %d\n", position);
 
@@ -24,7 +20,7 @@ int searchInsert(int* nums, int numsSize, int target) {
     else if (nums[last] == target)
         return last;
 
-    while (first != last) {
+    while (first < last) {
         if (nums[middle] < target) {
             first = middle + 1;
             middle = (last - first) / 2 + first;
@@ -36,9 +32,10 @@ int searchInsert(int* nums, int numsSize, int target) {
         }
     }
 
-    int position = nums[first] > target ? first - 1 : first + 1;
-    if (position < 0)
-        return 0;
-    else
-        return position;
+    if (first == last && nums[first] == target)
+        return first;
+
+    int position = nums[first] > target ? first : first + 1;
+
+    return position;
 }

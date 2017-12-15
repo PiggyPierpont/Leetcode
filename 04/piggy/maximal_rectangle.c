@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 int maximalRectangle(char **, int, int);
-int largestRectangleArea(int *, int);
-int* toHistogram(char **, int, int, int);
 
 int main(void) {
     char a[4][4] = {{'0', '0', '0', '0'},
@@ -24,6 +22,55 @@ int main(void) {
 }
 
 int maximalRectangle(char** matrix, int matrixRowSize, int matrixColSize) {
+    int* toHistogram(char** matrix, int start, int matrixRowSize, int matrixColSize) {
+        int* a = calloc(matrixColSize, sizeof(int));
+
+        for (int i = 0; i < matrixColSize; i++) {
+            for (int j = start; j < matrixRowSize; j++) {
+                if (matrix[j][i] == '1')
+                    a[i]++;
+                else
+                    break;
+            }
+        }
+
+        return a;
+    }
+
+    int largestRectangleArea(int* heights, int heightsSize) {
+        int area = 0;
+        int pre = 0;
+
+        for (int i = 0; i < heightsSize; i++) {
+            int curArea = 0, width = 1;
+            if (heights[i] == pre)
+                continue;
+
+            for (int j = i + 1; j < heightsSize; j++) {
+                if (heights[j] >= heights[i])
+                    width++;
+                else
+                    break;
+            }
+
+            for (int j = i - 1; j >= 0; j--) {
+                if (heights[j] >= heights[i])
+                    width++;
+                else
+                    break;
+            }
+
+            curArea = width * heights[i];
+
+            if (curArea > area)
+                area = curArea;
+
+            pre = heights[i];
+        }
+
+        return area;
+    }
+
     int area = 0;
 
     for (int i = 0; i < matrixRowSize; i++) {
@@ -35,48 +82,3 @@ int maximalRectangle(char** matrix, int matrixRowSize, int matrixColSize) {
 
     return area;
 }
-
-int* toHistogram(char** matrix, int start, int matrixRowSize, int matrixColSize) {
-    int* a = calloc(matrixColSize, sizeof(int));
-
-    for (int i = 0; i < matrixColSize; i++) {
-        for (int j = start; j < matrixRowSize; j++) {
-            if (matrix[j][i] == '1')
-                a[i]++;
-            else
-                break;
-        }
-    }
-
-    return a;
-}
-
-int largestRectangleArea(int* heights, int heightsSize) {
-    int area = 0;
-
-    for (int i = 0; i < heightsSize; i++) {
-        int curArea = 0, width = 1;
-
-        for (int j = i + 1; j < heightsSize; j++) {
-            if (heights[j] >= heights[i])
-                width++;
-            else
-                break;
-        }
-
-        for (int j = i - 1; j >= 0; j--) {
-            if (heights[j] >= heights[i])
-                width++;
-            else
-                break;
-        }
-
-        curArea = width * heights[i];
-
-        if (curArea > area)
-            area = curArea;
-    }
-
-    return area;
-}
-
