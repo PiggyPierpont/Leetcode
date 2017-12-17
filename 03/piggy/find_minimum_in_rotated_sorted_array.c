@@ -12,17 +12,22 @@ int main(void) {
 }
 
 int findMin(int* nums, int numsSize) {
-    int first = 0, last = numsSize - 1, middle = numsSize / 2;
+    int first = 0, last = numsSize - 1, middle = (numsSize - 1) / 2;
 
-    printf("# ");
-
-    if (nums[first] < nums[last])
-        return nums[first];
-    else {
+    while (first < last) {
+        if (nums[first] < nums[last])
+            return nums[first];
+        
         if (nums[middle] > nums[last]) {
-            return findMin(&nums[middle + 1], last - middle);
+            first = middle + 1;
+            middle = (last - first) / 2 + first;
         } else if (nums[middle] < nums[first]) {
-            return findMin(&nums[first + 1], middle - first);
+            last = middle;
+            middle = (last - first) / 2 + first;
+        } else {
+            break;
         }
     }
+
+    return nums[middle];
 }
