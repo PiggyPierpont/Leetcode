@@ -1,5 +1,12 @@
 # check
 
+## 06
+
+|        |Missing Number|Power of Two|Number of 1 Bits|
+|--------|:----------------------------:|:---------------:|:---------------:|
+|piggy   |0%|0%|0%|
+|pierpont|0%|0%|0%|
+
 ## 05
 
 |        |Search a 2D Matrix|Search for a Range|Search Insert Position|Find Peak Element|
