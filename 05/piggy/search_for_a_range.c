@@ -4,11 +4,11 @@
 int* searchRange(int *, int, int, int *);
 
 int main(void) {
-    int a[6] = {5, 7, 7, 8, 8, 10};
+    int a[8] = {0, 0, 1, 1, 1, 4, 5, 5};
     int returnSize;
     int* result;
 
-    result = searchRange(a, 6, 8, &returnSize);
+    result = searchRange(a, 8, 2, &returnSize);
 
     printf("[%d, %d]\n", result[0], result[1]);
 
@@ -17,39 +17,51 @@ int main(void) {
 
 int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
     int first = 0, last = numsSize - 1, middle = (numsSize - 1) / 2;
-    int m, n;
-    int* result;
+    int m = -1, n = -1;
+    int* result = malloc(2 * sizeof(int));
 
-    while (first != last) {
-        if (nums[first] == target)
-            break;
-        else if (nums[middle] == target) {
-            last = middle;
-            first++;
-            middle = (last - first) / 2 + first;
-        } else if (nums[middle] < target) {
-            first = middle + 1;
-            middle = (last - first) / 2 + first;
-        } else if (nums[middle] > target) {
-            last = middle - 1;
-            first++;
-            middle = (last - first) / 2 + first;
+    if (numsSize <= 2) {
+        for (int i = 0; i < numsSize; i++) {
+            if (nums[i] == target) {
+                m = i;
+                break;
+            }
         }
+    } else {
+        while (first < last) {
+            if (nums[first] == target) {
+                m == first;
+                break;
+            }
+            else if (nums[middle] == target) {
+                last = middle;
+                first++;
+                middle = (last - first) / 2 + first;
+            } else if (nums[middle] < target) {
+                first = middle + 1;
+                middle = (last - first) / 2 + first;
+            } else if (nums[middle] > target) {
+                last = middle - 1;
+                middle = (last - first) / 2 + first;
+            }
+        }
+        if (nums[first] == target)
+            m = first;
     }
 
-    m = first;
     n = m;
 
-    for (; n < numsSize; n++) {
-        if (nums[n + 1] != target)
-            break;
+    if (m != -1) {
+        for (; n < numsSize - 1; n++) {
+            if (nums[n + 1] != target)
+                break;
+        }
     }
-
-    result = malloc(2 * sizeof(int));
 
     result[0] = m;
     result[1] = n;
 
     *returnSize = 2;
     return result;
+
 }
