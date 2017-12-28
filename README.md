@@ -1,11 +1,19 @@
 # check
 
+## 07
+
+|        |Depth of Binary Tree |Construct Binary Tree from Inorder and Postorder Traversal|
+|--------|:-------------------:|:--------------------------------------------------------:|
+|piggy   |0%|0%|
+|pierpont|0%|0%|
+
+
 ## 06
 
 |        |Missing Number|Power of Two|Number of 1 Bits|
 |--------|:----------------------------:|:---------------:|:---------------:|
 |piggy   |100%|100%|100%|
-|pierpont|0%|0%|0%|
+|pierpont|100%|100%|100%|
 
 ## 05
 
