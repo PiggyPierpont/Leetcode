@@ -4,7 +4,7 @@
 
 |        |Depth of Binary Tree |Construct Binary Tree from Inorder and Postorder Traversal|
 |--------|:-------------------:|:--------------------------------------------------------:|
-|piggy   |0%|0%|
+|piggy   |100%|0%|
 |pierpont|0%|0%|
 
 
