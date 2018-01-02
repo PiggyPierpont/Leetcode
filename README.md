@@ -1,11 +1,19 @@
 # check
 
+## 08
+
+|        |Construct Binary Tree from Preorder and Inorder Traversal|Binary Tree Level Order Traversal|Symmetric Tree|
+|--------|:-----------------------:|:---------------:|:---------------:|
+|piggy   |0%|0%|0%|
+|pierpont|0%|0%|0%|
+
+
 ## 07
 
 |        |Depth of Binary Tree |Construct Binary Tree from Inorder and Postorder Traversal|
 |--------|:-------------------:|:--------------------------------------------------------:|
 |piggy   |100%|100%|
-|pierpont|0%|0%|
+|pierpont|100%|100%|
 
 
 ## 06
@@ -20,7 +28,7 @@
 |        |Search a 2D Matrix|Search for a Range|Search Insert Position|Find Peak Element|
 |--------|:----------------:|:----------------:|:--------------------:|:---------------:|
 |piggy   |100%|100%|100%|100%|
-|pierpont|100%|100%|100%|0%|
+|pierpont|100%|100%|100%|100%|
 
 ## 04
 
