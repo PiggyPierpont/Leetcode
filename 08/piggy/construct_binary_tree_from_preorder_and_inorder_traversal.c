@@ -1,4 +1,7 @@
 struct TreeNode* build(int* preorder, int pres, int pree, int* inorder, int ins, int ine) {
+    if (pres > pree)
+        return NULL;
+
     struct TreeNode* root = malloc(sizeof(struct TreeNode));
     root->val = preorder[pres];
 
