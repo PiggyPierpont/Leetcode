@@ -7,7 +7,7 @@ struct TreeNode* buildTree(int* inorder, int inorderSize, int* postorder, int po
 
         root->val = post[poste];
 
-        if (in == ins || posts == poste) {
+        if (ine == ins || posts == poste) {
             root->left = NULL;
             root->right = NULL;
 	    return root;
