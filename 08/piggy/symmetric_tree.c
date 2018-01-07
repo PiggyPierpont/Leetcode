@@ -8,8 +8,7 @@ struct TreeNode {
     struct TreeNode* right;
 };
 
-void inorderHelper(struct TreeNode*, int**, int*);
-void preorderHelper(struct TreeNode*, int**, int*);
+bool check(struct TreeNode*, struct TreeNode*);
 bool isSymmetric(struct TreeNode*);
 
 int main(void) {
@@ -37,45 +36,21 @@ int main(void) {
     return 0;    
 }
 
-void inorderHelper(struct TreeNode* root, int** inorder, int* n) {
-    if(root) {
-        inorderHelper(root->left, inorder, n);
-        *inorder = realloc(*inorder, (sizeof(int) * (*n + 1)));
-        if(*inorder == NULL)
-            printf("fail realloc!\n");
-        (*inorder)[*n] = root->val;
-        (*n)++;
-        inorderHelper(root->right, inorder, n);
-    }
-    return;
-}
+bool check(struct TreeNode* left, struct TreeNode* right) {
+    if(left == NULL && right == NULL)
+        return true;
+    else if(left == NULL || right == NULL)
+        return false;
 
-void fInorderHelper(struct TreeNode* root, int** fInorder, int*n) {
-    if(root) {
-        fInorderHelper(root->right, fInorder, n);
-        *fInorder = realloc(*fInorder, (sizeof(int) * (*n + 1)));
-        if(*fInorder == NULL)
-            printf("fail realloc!\n");
-        (*fInorder)[*n] = root->val;
-        (*n)++;
-        fInorderHelper(root->left, fInorder, n);
-    }
-    return;
+    if(left->val != right->val)
+        return false;
+
+    return check(left->left, right->right) && check(left->right, right->left); 
 }
 
 bool isSymmetric(struct TreeNode* root) {
-    int *inorder = NULL, *fInorder = NULL, ni = 0, nf = 0;
+    if(root == NULL)
+        return true;
 
-    inorderHelper(root, &inorder, &ni);
-    fInorderHelper(root, &fInorder, &nf);
-
-    if(ni % 2 != 1)
-        return false;
-
-    for(int i = 0; i < ni; i++) {
-        if(inorder[i] != fInorder[i])
-            return false;
-    }
-
-    return true;
+    return check(root->left, root->right);
 }
