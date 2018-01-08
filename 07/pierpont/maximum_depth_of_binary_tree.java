@@ -1,16 +1,10 @@
-
-public class Solution {
-	public static void main(String[] args) {
-		int a = hammingWeight(666);
-		System.out.println(a);
-		
+	class Solution {
+	    public int maxDepth(TreeNode root) {
+	        if (root == null) {return 0;}
+	        
+	        int leftDepth = maxDepth(root.left);
+	        int rightDepth = maxDepth(root.right);
+	        
+	        return leftDepth > rightDepth ? leftDepth++ : rightDepth++; 
+	    }
 	}
-    public static int hammingWeight(int n) {
-        int result = 0;
-        for (int i = 0;i < 32;i++) {
-        	result += (n & 1);
-        	n = n >> 1;
-        }
-        return result;
-    }
-}

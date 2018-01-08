@@ -159,8 +159,5 @@ Java:
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
-    public boolean isSymmetric(TreeNode root) {
-        
-    }
+2
 }
