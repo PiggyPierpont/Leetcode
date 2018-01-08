@@ -4,8 +4,8 @@
 
 |        |Construct Binary Tree from Preorder and Inorder Traversal|Binary Tree Level Order Traversal|Symmetric Tree|
 |--------|:-----------------------:|:---------------:|:---------------:|
-|piggy   |100%|0%|0%|
-|pierpont|0%|0%|0%|
+|piggy   |100%|100%|100%|
+|pierpont|100%|100%|100%|
 
 
 ## 07
